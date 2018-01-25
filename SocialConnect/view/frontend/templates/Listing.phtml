@@ -1,0 +1,35 @@
+
+<?php  $items = $block->getSocialConnectItemsList(); // get collection which we set in block class ?>
+<?php if ($items && count($items)): ?>
+    <div class="table-wrapper orders-history">
+        <table class="data table table-order-items history" id="my-orders-table">
+            <caption class="table-caption"><?php echo __('Record') ?></caption>
+            <thead>
+                <tr>
+                    <th scope="col" class="col id"><?php echo __('ID #') ?></th>
+                    <th scope="col" class="col title"><?php echo __('Title') ?></th>
+                    <th scope="col" class="col Description"><?php echo __('Description') ?></th>
+                    <th scope="col" class="col date"><?php echo __('Publish Date') ?></th>
+                    <th scope="col" class="col status"><?php echo __('Status') ?></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <?php  // read collection as magento1.x and display in list 
+                       foreach ($items as $item): ?>
+                    <tr>
+                        <td class="col id"><?php echo $item->getId() ?></td>
+                        <td class="col shipping"><?php echo $item->getTitle() ?></td>
+                        <td class="col DescriptionDescription"><?php echo $item->getDescription() ?></td>
+                        <td class="col date"><?php echo $block->formatDate($item->getPublishDate()) ?></td>
+                        <td class="col status"><?php echo $item->getStatus() ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+    <?php if ($block->getPagerHtml()): ?>
+    <?php endif ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php echo __('records not available.'); ?></span></div>
+<?php endif ?>

@@ -1,0 +1,27 @@
+<h1>
+    <?php //echo $this->escapeHtml($this->getMessage()); ?>
+	<?php //echo $this->getChildHtml('topSearch') ?>
+	<?php //echo $this->getWelcome()?>
+</h1>
+<!--	{{block type="core/template" name="contactForm" form_action="/contacts/index/post" template="contacts/form.phtml"}} -->
+
+	<form action="<?php echo $this->getUrl("socialconnect/form/contactPost"); ?>"
+    data-mage-init='{"validation": {"errorClass": "mage-error"}}'id="validate-detail"
+   method="post">
+
+		 <div class="input-box">
+           <label for="title">Title<span class="required">*</span></label><br />
+          <p> <input name="title" id="title" title="Title" value="" class="required-entry input-text" type="text" maxlength="10" style="width:300px;" /> </p>
+       </div>
+
+		<div class="input-box">
+         <label for="description">Description</label><br />
+          <p> <textarea name="description" id="description" title="Description" class="input-text" style="height:100px;width:300px"></textarea><br><br> </p>
+       </div>
+
+		<div class="button-set">
+			<input type="submit" value="Submit" class="action submit primary">
+		</div>
+
+	</form>
+	

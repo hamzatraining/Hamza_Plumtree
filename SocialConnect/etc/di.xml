@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <preference for="Plumtree\SocialConnect\Api\Data\ItemInterface" type="Plumtree\SocialConnect\Model\Item" />
+    <preference for="Plumtree\SocialConnect\Api\ItemRepositoryInterface" type="Plumtree\SocialConnect\Model\ItemRepository" />
+
+    <!-- Create our type ContactItemGridDataProvider -->
+    <virtualType name="ItemGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Plumtree\SocialConnect\Model\ResourceModel\Item\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">ItemGridFilterPool</argument> <!-- Define new object for filters -->
+        </arguments>
+    </virtualType>
+ 
+    <!-- Create our type ContactItemGridFilterPool -->
+    <virtualType name="ItemGridFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter</item>
+                <item name="fulltext" xsi:type="object">Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter</item>
+            </argument>
+        </arguments>
+    </virtualType>
+ 
+    <!-- Type for plumtreemodule_Item_listing_data_source -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="socialconnect_item_listing_data_source" xsi:type="string">Plumtree\SocialConnect\Model\ResourceModel\Grid\Item\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+ 
+    <!-- Simulate our class Plumtree\SocialConnect\Model\ResourceModel\Grid\Item\Collection -->
+    <virtualType name="Plumtree\SocialConnect\Model\ResourceModel\Grid\Item\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">plumtree_socialconnect_item</argument>
+            <argument name="resourceModel" xsi:type="string">Plumtree\SocialConnect\Model\ResourceModel\Item</argument>
+        </arguments>
+    </virtualType>
+</config>
+
+
+
+

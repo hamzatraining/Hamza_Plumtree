@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+		<menu>
+	   <add id="Plumtree_SocialConnect::socialconnect"
+	   title="Plumtree" 
+	   module="Plumtree_SocialConnect" 
+	   sortOrder="10" 
+	   resource="Plumtree_SocialConnect::socialconnect"/>
+
+	   <add id="Plumtree_SocialConnect::social" 
+	   	title="SocialConnect" 
+	   	module="Plumtree_SocialConnect" 
+	   	sortOrder="10" 
+	   	action="socialconnect/item/index" 
+	   	resource="Plumtree_SocialConnect::social" 
+	   	parent="Plumtree_SocialConnect::socialconnect"/>
+
+	   	<add id="Plumtree_SocialConnect::itemmanager" 
+	   	title="BlogPost" 
+	   	module="Plumtree_BlogPost" 
+	   	sortOrder="10" 
+	   	action="blogpost/item/index" 
+	   	resource="Plumtree_SocialConnect::itemmanager" 
+	   	parent="Plumtree_SocialConnect::socialconnect"/>
+
+	 
+    </menu>
+
+</config>

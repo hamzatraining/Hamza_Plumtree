@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customform>
+            <active_display>
+                <active_on_front>1</active_on_front>
+            </active_display>
+        </customform>
+        <customform>
+            <active_display>
+                <admin_email>megento.local</admin_email>
+            </active_display>
+        </customform>
+
+    </default>
+</config>
