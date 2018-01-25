@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+		<menu>
+<!--	   <add id="Plumtree_BlogPost::blogpost"
+	   title="Admin Grid" 
+	   module="Plumtree_BlogPost" 
+	   sortOrder="50" 
+	   resource="Plumtree_BlogPost::blogpost"/> 
+
+
+	   	<add id="Plumtree_BlogPost::blog" 
+	   	title="Blog Post" 
+	   	module="Plumtree_BlogPost" 
+	   	sortOrder="10" 
+	   	action="blogpost/item/index" 
+	   	resource="Plumtree_BlogPost::blog" 
+	   	parent="Plumtree_BlogPost::blogpost"/>
+	 -->
+    </menu>
+
+</config>
+
+<!--
+<add id="Plumtree_SocialConnect::item manager" 
+title="Item Manager"
+module="Plumtree_SocialConnect" 
+sortOrder="10" 
+parent="Plumtree_SocialConnect::socialconnect" 
+dependsOnModule="Plumtree_SocialConnect" 
+resource="Plumtree_SocialConnect::socialconnect"/> -->
